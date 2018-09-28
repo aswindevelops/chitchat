@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/row_padding_vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/row_padding_vertical"
+    >
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/no_user_image"
+        android:id="@+id/home_chat_user_image"
+        android:layout_marginEnd="8dp"
+        />
+
+    <TextView
+        android:id="@+id/home_chat_recyclerview_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+       android:layout_toEndOf="@id/home_chat_user_image"
+        android:text="Aswin Manoharan"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_alignStart="@+id/home_chat_recyclerview_row"
+        android:src="@drawable/ic_action_check"
+        android:id="@+id/chat_checkmark"
+        android:layout_alignTop="@+id/home_chat_last_message"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/home_chat_last_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_chat_recyclerview_row"
+        android:layout_toEndOf="@id/chat_checkmark"
+        android:text="last message here"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/home_chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="11:30AM" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#b9b9b9"
+        android:layout_below="@+id/home_chat_last_message"
+        android:layout_marginTop="8dp"
+        />
+
+
+</RelativeLayout>
