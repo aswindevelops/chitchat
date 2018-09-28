@@ -13,17 +13,38 @@ import java.util.List;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.MyViewHolder> {
     private List<ChatRow> chatlist;
+    private OnItemClickListener mListener;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nameView, lastMessageView, timeView;
         private ImageView userImageView;
-        public MyViewHolder(View itemView) {
+
+        public  MyViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             nameView = (TextView)itemView.findViewById(R.id.home_chat_recyclerview_row);
             lastMessageView = (TextView)itemView.findViewById(R.id.home_chat_last_message);
             timeView = (TextView)itemView.findViewById(R.id.home_chat_time);
             userImageView = (ImageView)itemView.findViewById(R.id.home_chat_user_image);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener!=null){
+                        int position = getAdapterPosition();
+                        if(position!=RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -35,7 +56,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.MyView
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.chat_row_layout,parent,false);
-        return new MyViewHolder(view);
+        return new MyViewHolder(view,mListener);
     }
 
     @Override
