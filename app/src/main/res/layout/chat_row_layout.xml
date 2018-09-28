@@ -6,18 +6,18 @@
     android:focusable="true"
     android:background="?attr/selectableItemBackground"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/row_padding_vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/row_padding_vertical"
     >
+
     <ImageView
+        android:id="@+id/home_chat_user_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/no_user_image"
-        android:id="@+id/home_chat_user_image"
         android:layout_marginEnd="8dp"
-        />
+        android:scaleType="centerCrop"
+        android:src="@drawable/no_user_image" />
 
     <TextView
         android:id="@+id/home_chat_recyclerview_row"
@@ -57,9 +57,10 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#b9b9b9"
+        android:background="#eaeaea"
         android:layout_below="@+id/home_chat_last_message"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="60dp"
         />
 
 

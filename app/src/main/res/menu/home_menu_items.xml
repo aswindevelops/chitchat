@@ -13,12 +13,12 @@
         app:showAsAction="never"
         />
     <item
-        android:title="Settings"
+        android:title="New Group"
         android:id="@+id/home_menu_newgroup"
         app:showAsAction="never"
         />
     <item
-        android:title="Settings"
+        android:title="Starred Messages"
         android:id="@+id/home_menu_starred_messages"
         app:showAsAction="never"
         />

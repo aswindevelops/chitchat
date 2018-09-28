@@ -2,13 +2,15 @@ package chatapp.chitchat.com.chitchat;
 
 public class ChatRow {
     private String name,lastMessage,time;
+    int imageId;
     public ChatRow(){
     }
 
-    public ChatRow(String name, String lastMessage,String time){
+    public ChatRow(String name, String lastMessage,String time,int imageId){
         this.name = name;
         this.lastMessage = lastMessage;
         this.time = time;
+        this.imageId = imageId;
     }
 
     public String getName() {
@@ -33,5 +35,13 @@ public class ChatRow {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }

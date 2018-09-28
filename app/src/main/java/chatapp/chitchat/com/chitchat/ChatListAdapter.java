@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,12 +16,14 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nameView, lastMessageView, timeView;
+        private ImageView userImageView;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             nameView = (TextView)itemView.findViewById(R.id.home_chat_recyclerview_row);
             lastMessageView = (TextView)itemView.findViewById(R.id.home_chat_last_message);
             timeView = (TextView)itemView.findViewById(R.id.home_chat_time);
+            userImageView = (ImageView)itemView.findViewById(R.id.home_chat_user_image);
         }
     }
 
@@ -41,6 +44,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.MyView
         holder.nameView.setText(chatRow.getName());
         holder.lastMessageView.setText(chatRow.getLastMessage());
         holder.timeView.setText(chatRow.getTime());
+        holder.userImageView.setImageResource(chatRow.getImageId());
     }
 
     @Override
