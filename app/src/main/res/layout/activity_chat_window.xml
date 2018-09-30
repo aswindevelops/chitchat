@@ -1,13 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatWindowActivity">
+    tools:context=".ChatWindowActivity"
+    android:background="#fff3f3">
     <include
-        layout="@layout/toolbar_layout"
+        layout="@layout/chat_window_toolbar_layout"
         android:id="@+id/chat_window_toolbar"
         />
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/chat_window_toolbar"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill_vertical">
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/viewChat"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="56dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:elevation="1dp"
+                />
+
+            <LinearLayout
+                android:elevation="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/smiley"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/chat_window_chat_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:elevation="2dp"
+                    android:hint="Type a message here"
+                    android:inputType="textMultiLine"
+                    android:padding="15dp"
+                    android:paddingStart="10dp"></EditText>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/chat_window_send_message_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_action_send" />
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+       <!-- <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_marginLeft="8dp"
+            android:elevation="2dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_action_send"
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/chat_window_send_message_btn"
+             /> -->
+
+    </LinearLayout>
+</RelativeLayout>

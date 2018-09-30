@@ -20,7 +20,7 @@
         android:id="@+id/home_tablayout"
         app:tabGravity="fill"
         android:minHeight="?attr/actionBarSize"
-        app:tabTextColor="#89a497"
+        app:tabTextColor="#f1c9c9"
         app:tabSelectedTextColor="#fff"
         />
 

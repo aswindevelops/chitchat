@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Call"
+        android:id="@+id/chat_window_call_option"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_call"
+        />
+    <item
+        android:title="Attach Item"
+        android:id="@+id/chat_window_attach_item_option"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_action_attach"
+        />
+    <item
+        android:title="View Profile"
+        android:id="@+id/chat_window_view_profile_option"
+        app:showAsAction="never"
+        />
+
+</menu>

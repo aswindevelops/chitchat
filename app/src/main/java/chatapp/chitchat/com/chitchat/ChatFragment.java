@@ -52,6 +52,7 @@ public class ChatFragment extends Fragment {
                String str = chatlist.get(position).getName();
                 Intent chatWindowIntent = new Intent(getContext(),ChatWindowActivity.class);
                 chatWindowIntent.putExtra("USERS_NAME",chatlist.get(position).getName());
+                chatWindowIntent.putExtra("USER_IMAGE_ID",chatlist.get(position).getImageId());
                 startActivity(chatWindowIntent);
 
             }
